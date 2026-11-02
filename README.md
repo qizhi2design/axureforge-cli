@@ -105,5 +105,5 @@ cd axure-forge-0.2.1-macos-arm64
 ## 许可证
 
 AxureForge 采用 [MIT License](LICENSE)。
-安装包内附随第三方组件的许可证文本，见 `THIRD_PARTY_LICENSES/`。
+安装包内附随第三方组件的许可证文本。
 本项目与 Axure 官方无关。
