@@ -61,12 +61,12 @@ AxureForge 以目录包分发，下载解压就能用。**必须保留整个目�
 2. 把两个文件放在同一个文件夹，先校验，再解压。
 3. 进入解压后的目录，运行 `--version` 确认可用。
 
-下面以 Apple 芯片 Mac 的 0.3.0 为例；Linux 和 Windows 换成对应平台的压缩包，步骤相同。
+下面以 Apple 芯片 Mac 的 0.4.0 为例；Linux 和 Windows 换成对应平台的压缩包，步骤相同。
 
 ```bash
 shasum -a 256 -c SHA256SUMS
-tar -xzf axure-forge-0.3.0-macos-arm64.tar.gz
-cd axure-forge-0.3.0-macos-arm64
+tar -xzf axure-forge-0.4.0-macos-arm64.tar.gz
+cd axure-forge-0.4.0-macos-arm64
 ./axure-forge --version
 ./axure-forge --help
 ```
@@ -243,7 +243,7 @@ RP9 和 RP11 都支持读取、编辑和写入，两个版本之间可以互转�
 <details>
 <summary><b>启动失败，提示临时目录不可用？</b></summary>
 
-0.3.0 使用目录包。请确认整个目录和 `_internal` 都在，程序文件有执行权限。
+0.4.0 使用目录包。请确认整个目录和 `_internal` 都在，程序文件有执行权限。
 
 </details>
 
@@ -308,12 +308,16 @@ RP9 和 RP11 都支持读取、编辑和写入，两个版本之间可以互转�
 
 ## 更新与版本
 
-当前发布版本是 0.3.0，还没有命令行自更新。
+当前发布版本为 0.4.0，可检查 CLI 和 skill 版本并手动更新：
 
-升级方式：重新下载整个目录包，解压后替换旧目录；macOS 也可以用 skill 的安装脚本完成校验和替换。
-覆盖前先备份旧目录和原型。
+```bash
+axure-forge update check
+axure-forge update all --dry-run
+axure-forge update all --yes
+axure-forge config set sources.cli.repo qizhi2design/axureforge-cli
+```
 
-`update` 和 `config` 命令会随下一个版本提供，参数与离线行为见[更新说明](docs/updates.md)。
+断网不影响日常使用；自动检查失败静默跳过，手动更新遇到发布源不可达时正常结束并保留当前安装。镜像、回滚与平台行为见[更新说明](docs/updates.md)。0.3.0 用户需要先完整下载一次 0.4.0 目录包，才能使用新增更新命令。
 
 ## 许可与合规
 

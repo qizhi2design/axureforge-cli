@@ -61,12 +61,12 @@ AxureForge ships as a directory package. **Keep the whole directory, `_internal`
 2. Put both files in the same folder, verify first, then extract.
 3. Enter the extracted directory and run `--version` to confirm it works.
 
-The example below uses 0.3.0 on an Apple-silicon Mac; for Linux and Windows grab the matching archive, the steps are the same.
+The example below uses 0.4.0 on an Apple-silicon Mac; for Linux and Windows grab the matching archive, the steps are the same.
 
 ```bash
 shasum -a 256 -c SHA256SUMS
-tar -xzf axure-forge-0.3.0-macos-arm64.tar.gz
-cd axure-forge-0.3.0-macos-arm64
+tar -xzf axure-forge-0.4.0-macos-arm64.tar.gz
+cd axure-forge-0.4.0-macos-arm64
 ./axure-forge --version
 ./axure-forge --help
 ```
@@ -243,7 +243,7 @@ Only allow it after you have confirmed the download source and the `SHA256SUMS` 
 <details>
 <summary><b>It fails to start and complains about a temporary directory?</b></summary>
 
-0.3.0 ships as a directory package. Make sure the whole directory and `_internal` are present, and that the executable is allowed to run.
+0.4.0 ships as a directory package. Make sure the whole directory and `_internal` are present, and that the executable is allowed to run.
 
 </details>
 
@@ -308,12 +308,16 @@ Exit codes: `0` success, `1` execution or verification failure, `2` invalid argu
 
 ## Updates and versions
 
-The current release is 0.3.0 and it has no self-update command yet.
+The current release is 0.4.0. Check CLI and skill versions and update manually:
 
-To upgrade, download the directory package again and replace the old directory; on macOS the skill's installer can verify and replace it for you.
-Back up the old directory and your prototypes first.
+```bash
+axure-forge update check
+axure-forge update all --dry-run
+axure-forge update all --yes
+axure-forge config set sources.cli.repo qizhi2design/axureforge-cli
+```
 
-The `update` and `config` commands arrive with the next release; parameters and offline behaviour are described in the [update notes](docs/updates.md) (Chinese).
+Offline use remains available. Automatic checks fail silently; manual updates leave the current installation intact when the release source is unreachable. See the [update notes](docs/updates.md) for mirrors, rollback and platform behaviour. Users on 0.3.0 must download the complete 0.4.0 directory package once to obtain the new commands.
 
 ## License and compliance
 

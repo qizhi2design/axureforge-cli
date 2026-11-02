@@ -1,9 +1,9 @@
 # CLI 与 Skill 更新
 
-> **状态：尚未发布。** 本文描述的 `config` 与 `update` 命令随下一个正式版本提供。
-> 当前发布版 0.3.0 没有这两个命令（调用会报 `invalid choice`），升级请按 README 重新下载目录包。
+> **当前版本：0.4.0。** 已提供 `config` 与 `update` 命令。
+> 0.3.0 用户需先下载完整的 0.4.0 目录包，后续版本可通过命令更新。
 
-| 能力 | 0.3.0 | 下一个版本 |
+| 能力 | 0.3.0 | 0.4.0 |
 | --- | --- | --- |
 | 原型操作命令（project / page / node / html / batch 等） | 可用 | 可用 |
 | `update check` / `update cli` / `update skill` / `update all` | 不可用 | 可用 |
@@ -68,7 +68,7 @@ CLI 与 skill 的正式 Release 都需要三个部分：`release-manifest.json`�
 
 skill 清单另含 `cli_min_version`、可空的 `cli_max_version`（不包含上限）及 `platforms`。包内 `skill-manifest.json` 同时记录名称和全部受管文件哈希，校验时拒绝缺失、额外文件及链接。旧安装没有清单时报告未知，不猜测版本。GitHub Release 中的 draft、prerelease 和非 X.Y.Z 标签不参与选择。
 
-本次源码增加了更新能力，尚未发布新版。不要覆盖已有 0.3.0 Release；正式发布前递增包版本和 skill 版本。
+0.4.0 提供更新能力和发布清单。既有 0.3.0 Release 保持不变，后续发布不得覆盖旧 tag 或资源。
 
 1. 保持 core / cli / mcp 的包版本与依赖一致，运行现有构建、协议和业务检查。
 2. 三个平台各运行 `scripts/build_binary.py`、`scripts/verify_binary.py`、`scripts/verify_workflow.py`、`scripts/verify_update_binary.py` 和 `scripts/package_binary.py TARGET`。
