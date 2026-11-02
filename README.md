@@ -1,16 +1,55 @@
-# AxureForge CLI
+<p align="center">
+  <img src="docs/images/banner.png" alt="AxureForge CLI —— 批量改原型，不用一个个点" width="100%">
+</p>
 
-> 在电脑上创建、读取和修改 Axure RP9 原型文件（`.rp`）的独立小程序。
+<h1 align="center">AxureForge CLI</h1>
+
+<p align="center"><b>批量改原型，不用一个个点。</b></p>
+<p align="center">
+  创建、读取和修改 Axure RP9 原型文件（<code>.rp</code>）<br>
+  建页面、加元件、改文案、导入网页，都能一次做完。
+</p>
+
+<p align="center">
+  <img alt="支持 Apple 芯片 Mac" src="https://img.shields.io/badge/macOS-Apple%20Silicon-000000?logo=apple&logoColor=white">
+  <img alt="支持 Linux 64 位" src="https://img.shields.io/badge/Linux-x64-FCC624?logo=linux&logoColor=black">
+  <img alt="支持 Windows 64 位" src="https://img.shields.io/badge/Windows-x64-0078D4?logo=windows&logoColor=white">
+  <img alt="当前版本" src="https://img.shields.io/github/v/release/qizhi2design/axureforge-cli?color=0A7AFF">
+  <img alt="许可证 MIT" src="https://img.shields.io/badge/license-MIT-22C55E">
+</p>
+
+<p align="center">
+  <img alt="新建原型" src="https://img.shields.io/badge/%E6%96%B0%E5%BB%BA%E5%8E%9F%E5%9E%8B-22D3EE?style=flat-square">
+  <img alt="批量修改" src="https://img.shields.io/badge/%E6%89%B9%E9%87%8F%E4%BF%AE%E6%94%B9-22D3EE?style=flat-square">
+  <img alt="HTML 导入" src="https://img.shields.io/badge/HTML%E5%AF%BC%E5%85%A5-22D3EE?style=flat-square">
+  <img alt="模板搜索" src="https://img.shields.io/badge/%E6%A8%A1%E6%9D%BF%E6%90%9C%E7%B4%A2-22D3EE?style=flat-square">
+</p>
+
+<p align="center">
+  <a href="#能做什么">能做什么</a> ·
+  <a href="#演示">演示</a> ·
+  <a href="#下载与安装">下载与安装</a> ·
+  <a href="#快速上手">快速上手</a> ·
+  <a href="#常见问题">常见问题</a>
+</p>
 
 ## 能做什么
 
-- 从零新建一个 RP9 原型文件，直接开始画。
-- 往指定页面里添加文本、按钮、输入框等元件。
-- 批量修改元件文案和属性，不用一个个点。
-- 把现成的网页（HTML）转成可编辑的原型页面。
-- 查询内置的格式模板和元件，快速找到能用的东西。
+- 🆕 从零新建一个 RP9 原型文件，直接开始画。
+- 🧩 往指定页面里添加文本、按钮、输入框等元件。
+- ⚡ 批量修改元件文案和属性，不用一个个点。
+- 🌐 把现成的网页（HTML）转成可编辑的原型页面。
+- 🔍 查询内置的格式模板和元件，快速找到能用的东西。
 
 想直接用中文提需求、不用记命令，可以配合 [axure-forge-skill](https://github.com/qizhi2design/axure-forge-skill) 使用。
+
+## 演示
+
+<p align="center">
+  <img src="docs/images/demo.gif" alt="终端演示：新建项目、查看页面、添加元件" width="100%">
+</p>
+
+*终端里新建项目 → 查看页面 → 添加元件的录屏。*
 
 ## 下载与安装
 
@@ -30,11 +69,11 @@ cd axure-forge-0.2.1-macos-arm64
 ./axure-forge --help
 ```
 
-第 1 行：核对下载的文件是否完整，没损坏才算下载成功。
-第 2 行：解压压缩包。
-第 3 行：进入解压出来的文件夹。
-第 4 行：显示版本号，能显示出来就说明程序可用。
-第 5 行：列出程序支持的所有命令。
+- 第 1 行：核对下载的文件是否完整，没损坏才算下载成功。
+- 第 2 行：解压压缩包。
+- 第 3 行：进入解压出来的文件夹。
+- 第 4 行：显示版本号，能显示出来就说明程序可用。
+- 第 5 行：列出程序支持的所有命令。
 
 也可以把解压出来的程序复制到自己常用的命令文件夹里，之后在任何位置直接输入 `axure-forge` 使用。
 
@@ -49,10 +88,10 @@ cd axure-forge-0.2.1-macos-arm64
 ./axure-forge format list
 ```
 
-第 1 行：新建一个叫 Demo 的原型文件，保存成 `demo.rp`。
-第 2 行：列出这个文件里有哪些页面。
-第 3 行：在内置模板里搜索「输入框」，看看哪些可以直接用。
-第 4 行：查看程序认识的格式和元件清单。
+- 第 1 行：新建一个叫 Demo 的原型文件，保存成 `demo.rp`。
+- 第 2 行：列出这个文件里有哪些页面。
+- 第 3 行：在内置模板里搜索「输入框」，看看哪些可以直接用。
+- 第 4 行：查看程序认识的格式和元件清单。
 
 往页面上加一个元件。先用第 2 条命令找到页面编号（`scope_id`），再填到下面：
 
@@ -77,21 +116,56 @@ cd axure-forge-0.2.1-macos-arm64
 
 **默认不覆盖。** 输出文件已存在时命令会停下来提示；确认要覆盖时再加 `--force`。
 
-## 遇到问题
+## 常见问题
 
-**Mac 首次打开被系统拦下。** 程序没有经过 Apple 的开发者验证，Mac 首次打开时会提示无法验证开发者。请你自己到「系统设置 → 隐私与安全性」里允许它运行。确认下载来源和校验文件都无误后再允许。
+<details>
+<summary><b>Mac 第一次打开被系统拦下了？</b></summary>
 
-**启动失败，提示临时目录不可用。** 程序启动时要往系统临时目录写文件并执行，那个目录必须可写、允许执行；被安全软件或系统策略锁住时会启动不了。
+程序没经过 Apple 的开发者验证，请自己到「系统设置 → 隐私与安全性」里允许。
+确认下载来源和校验文件无误后再允许。
 
-**担心改坏原型。** 建议先复制一份原型再操作，看过结果确认没问题，再替换正式文件。
+</details>
 
-**想看某个命令怎么用。** 在命令后面加 `--help`，例如：
+<details>
+<summary><b>启动失败，提示临时目录不可用？</b></summary>
+
+程序启动需要可写且允许执行的系统临时目录，被安全软件或系统策略锁住时会启动不了。
+
+</details>
+
+<details>
+<summary><b>担心把原型改坏了？</b></summary>
+
+先复制一份原型再操作，看过结果没问题再替换正式文件。
+
+</details>
+
+<details>
+<summary><b>改完的文件在哪？</b></summary>
+
+由 `--output` 指定；不指定不会生成新文件。
+
+</details>
+
+<details>
+<summary><b>已有同名文件会被覆盖吗？</b></summary>
+
+默认不会，会停下来提示；确认覆盖要加 `--force`。
+
+</details>
+
+<details>
+<summary><b>想看某个命令怎么用？</b></summary>
+
+在命令后加 `--help`，例如：
 
 ```bash
 ./axure-forge --help
 ./axure-forge node --help
 ./axure-forge node create --help
 ```
+
+</details>
 
 ## 适用范围
 
@@ -107,3 +181,5 @@ cd axure-forge-0.2.1-macos-arm64
 AxureForge 采用 [MIT License](LICENSE)。
 安装包内附随第三方组件的许可证文本。
 本项目与 Axure 官方无关。
+
+<!-- 社交预览图：docs/images/social-preview.png（1280×640），上传到仓库 Settings → Social preview，不在 README 中显示 -->
