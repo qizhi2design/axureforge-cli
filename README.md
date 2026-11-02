@@ -6,15 +6,15 @@
 ## 下载与安装
 
 在本仓库的 **Releases** 页面下载对应系统和 CPU 架构的压缩包及 `SHA256SUMS`。
-运行无需安装 Python 或 uv。当前首个发行提供 macOS ARM64（Apple Silicon）产物；
-Linux x64、Windows x64 产物将在各平台构建验证后提供。
+运行无需安装 Python 或 uv。v0.2.1 提供 macOS ARM64（Apple Silicon）、
+Linux x64（Ubuntu 22.04/glibc）与 Windows x64 产物，均经过原生构建验证。
 
 macOS：
 
 ```bash
 shasum -a 256 -c SHA256SUMS
-tar -xzf axure-forge-0.2.0-macos-arm64.tar.gz
-cd axure-forge-0.2.0-macos-arm64
+tar -xzf axure-forge-0.2.1-macos-arm64.tar.gz
+cd axure-forge-0.2.1-macos-arm64
 ./axure-forge --version
 ./axure-forge --help
 ```
