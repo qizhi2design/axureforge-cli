@@ -1,6 +1,18 @@
 # CLI 与 Skill 更新
 
-更新代码位于 CLI 适配层，仅使用 Python 标准库。`config`、`update` 和元数据查询均不加载 RP 核心功能。
+> **状态：尚未发布。** 本文描述的 `config` 与 `update` 命令随下一个正式版本提供。
+> 当前发布版 0.3.0 没有这两个命令（调用会报 `invalid choice`），升级请按 README 重新下载目录包。
+
+| 能力 | 0.3.0 | 下一个版本 |
+| --- | --- | --- |
+| 原型操作命令（project / page / node / html / batch 等） | 可用 | 可用 |
+| `update check` / `update cli` / `update skill` / `update all` | 不可用 | 可用 |
+| `config show` / `config set` / `config reset` | 不可用 | 可用 |
+| 自动检查更新（交互终端） | 不可用 | 可用 |
+
+更新逻辑在适配层实现，`config`、`update` 和元数据查询都不加载 RP 核心能力，所以这几条命令启动很快。
+
+下文命令假设 `axure-forge` 已在 PATH 中；直接跑解压目录时改用 `./axure-forge`。
 
 ## 使用
 
@@ -48,7 +60,9 @@ axure-forge update check --component cli --repo owner/repo
 
 配置和缓存位于系统用户目录，不写项目 `.forge/`：macOS 使用 `~/Library/Application Support/axure-forge` 和 `~/Library/Caches/axure-forge`；Linux 使用 XDG config/cache；Windows 使用 `%LOCALAPPDATA%/AxureForge/config` 和 `cache`。缓存按来源、组件、平台区分。
 
-## 发布契约
+## 发布契约（维护者内部流程）
+
+> 本节的构建与打包脚本属于内部维护流程，不在本仓库内。读者请忽略这一节。
 
 CLI 与 skill 的正式 Release 都需要三个部分：`release-manifest.json`、`SHA256SUMS`、完整压缩包。清单格式版本为 1，包含 `component`、`version`、`protocol_version`、`assets`；asset 按 CLI 平台或 `skill` 键存储 `filename` 和 `sha256`。
 
