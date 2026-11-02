@@ -48,14 +48,14 @@
 2. 把这两个文件放在同一个文件夹里，先校验，再解压。
 3. 进入解压出来的文件夹运行，能看到版本号就说明可用。
 
-下载解压后就能用，不用另外安装运行环境。
-下面以 Apple 芯片的 Mac、最新版本 0.2.1 为例；Linux 和 Windows 下载各自的压缩包，步骤一样。
+下载解压后即可使用，不用另外安装运行环境。请保留整个目录及 `_internal`，不能只复制可执行文件。
+下面以 Apple 芯片的 Mac、最新版本 0.3.0 为例；Linux 和 Windows 下载各自的压缩包，步骤一样。
 文件名按你实际下载到的版本替换即可。
 
 ```bash
 shasum -a 256 -c SHA256SUMS
-tar -xzf axure-forge-0.2.1-macos-arm64.tar.gz
-cd axure-forge-0.2.1-macos-arm64
+tar -xzf axure-forge-0.3.0-macos-arm64.tar.gz
+cd axure-forge-0.3.0-macos-arm64
 ./axure-forge --version
 ./axure-forge --help
 ```
@@ -66,7 +66,7 @@ cd axure-forge-0.2.1-macos-arm64
 - 第 4 行：显示版本号，能显示出来就说明程序可用。
 - 第 5 行：列出程序支持的所有命令。
 
-也可以把解压出来的程序复制到自己常用的命令文件夹里，之后在任何位置直接输入 `axure-forge` 使用。
+可把整个目录移动到固定位置，再为其中的可执行文件创建命令入口；macOS 可使用 skill 的安装脚本自动完成校验和部署。
 
 ## 快速上手
 
@@ -107,6 +107,20 @@ cd axure-forge-0.2.1-macos-arm64
 
 **默认不覆盖。** 输出文件已存在时命令会停下来提示；确认要覆盖时再加 `--force`。
 
+## 0.3 工作目录与批量执行
+
+```bash
+./axure-forge capabilities --json
+./axure-forge html import ./site --page-size 1440x900 --output imported.rp --verify
+./axure-forge dump --project imported.rp
+./axure-forge verify --index .forge/index
+```
+
+生成的数据位于当前工作目录 `.forge/`，可用 `--work-dir DIR` 指定。先读取 `summary.json`，按需查看计划、索引和报告。
+HTML 自动缓存布局，支持 `html plan` 和 `html import --plan FILE`；输入或资源变化会使计划失效。
+宽度固定、高度自动延展；固定画布用 `--page-mode fixed`。batch 支持 `as` 与 `{"$ref":"alias.field"}` 引用前一步结果。
+自动检查区分结构和布局估算，视觉、交互仍需在 Axure 中验收。
+
 ## 常见问题
 
 <details>
@@ -120,7 +134,7 @@ cd axure-forge-0.2.1-macos-arm64
 <details>
 <summary><b>启动失败，提示临时目录不可用？</b></summary>
 
-程序启动需要可写且允许执行的系统临时目录，被安全软件或系统策略锁住时会启动不了。
+0.3.0 默认使用目录包。请检查整个目录及 `_internal` 是否完整，以及文件是否允许执行。
 
 </details>
 
