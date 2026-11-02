@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="docs/images/banner.png" alt="AxureForge CLI —— 批量改原型，不用一个个点" width="100%">
+  <img src="docs/images/banner.jpg" alt="AxureForge CLI —— 批量改原型，不用一个个点" width="100%">
 </p>
 
 <h1 align="center">AxureForge CLI</h1>
@@ -27,7 +27,6 @@
 
 <p align="center">
   <a href="#能做什么">能做什么</a> ·
-  <a href="#演示">演示</a> ·
   <a href="#下载与安装">下载与安装</a> ·
   <a href="#快速上手">快速上手</a> ·
   <a href="#常见问题">常见问题</a>
@@ -42,14 +41,6 @@
 - 🔍 查询内置的格式模板和元件，快速找到能用的东西。
 
 想直接用中文提需求、不用记命令，可以配合 [axure-forge-skill](https://github.com/qizhi2design/axure-forge-skill) 使用。
-
-## 演示
-
-<p align="center">
-  <img src="docs/images/demo.gif" alt="终端演示：新建项目、查看页面、添加元件" width="100%">
-</p>
-
-*终端里新建项目 → 查看页面 → 添加元件的录屏。*
 
 ## 下载与安装
 
@@ -181,5 +172,3 @@ cd axure-forge-0.2.1-macos-arm64
 AxureForge 采用 [MIT License](LICENSE)。
 安装包内附随第三方组件的许可证文本。
 本项目与 Axure 官方无关。
-
-<!-- 社交预览图：docs/images/social-preview.png（1280×640），上传到仓库 Settings → Social preview，不在 README 中显示 -->
