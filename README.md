@@ -44,7 +44,7 @@
 ## What it does
 
 - 🆕 Start a new RP9 or RP11 prototype from scratch.
-- 🧩 30 command groups and 155 commands: pages and page tree, widgets, dynamic panels, repeaters, tables, trees, menus, masters and master tree, adaptive views, connectors, interactions and interaction styles, expressions, component libraries, groups, frames, folders, search, formats and batch.
+- 🧩 36 top-level entries and 170 leaf commands: pages and page tree, widgets, dynamic panels, repeaters, tables, trees, menus, masters and master tree, adaptive views, connectors, interactions and interaction styles, expressions, component libraries, groups, frames, folders, search, formats and batch.
 - 🌐 Import an existing web page in one pass; layout is computed for you and you get an editable page.
 - 🔍 `dump` builds an index, so you can query pages and widgets locally instead of reopening the file.
 - ⚡ Batch edits commit in one go: either all of them land, or none of them do.
@@ -61,12 +61,12 @@ AxureForge ships as a directory package. **Keep the whole directory, `_internal`
 2. Put both files in the same folder, verify first, then extract.
 3. Enter the extracted directory and run `--version` to confirm it works.
 
-The example below uses 0.4.0 on an Apple-silicon Mac; for Linux and Windows grab the matching archive, the steps are the same.
+The example below uses 0.5.0 on an Apple-silicon Mac; for Linux and Windows grab the matching archive, the steps are the same.
 
 ```bash
 shasum -a 256 -c SHA256SUMS
-tar -xzf axure-forge-0.4.0-macos-arm64.tar.gz
-cd axure-forge-0.4.0-macos-arm64
+tar -xzf axure-forge-0.5.0-macos-arm64.tar.gz
+cd axure-forge-0.5.0-macos-arm64
 ./axure-forge --version
 ./axure-forge --help
 ```
@@ -78,6 +78,12 @@ cd axure-forge-0.4.0-macos-arm64
 - Line 5: list every command the tool supports.
 
 You can move the whole directory to a fixed location and create a command entry for the executable inside it. On macOS the skill's installer can verify and deploy it for you.
+
+## CLI 0.5.0 interface
+
+Run `axure-forge` to see the installed version and grouped command help. All CLI help and messages are in English. Errors retain protocol-v3 JSON on stdout and concise diagnostics on stderr; add `--debug` for tracebacks.
+
+**Breaking change:** command groups use kebab-case: `adaptive-view`, `adaptive-view-set`, `interaction-style`, `master-folder`, `master-instance`, `master-tree`, and `page-tree`. Underscore spellings and abbreviated long options are rejected. Batch operation names such as `master_instance.create` are unchanged. See the [complete help snapshot](docs/cli-help.md) and [release notes](docs/RELEASE-0.5.md).
 
 ## Three-minute tour
 
@@ -243,7 +249,7 @@ Only allow it after you have confirmed the download source and the `SHA256SUMS` 
 <details>
 <summary><b>It fails to start and complains about a temporary directory?</b></summary>
 
-0.4.0 ships as a directory package. Make sure the whole directory and `_internal` are present, and that the executable is allowed to run.
+0.5.0 ships as a directory package. Make sure the whole directory and `_internal` are present, and that the executable is allowed to run.
 
 </details>
 
@@ -308,7 +314,7 @@ Exit codes: `0` success, `1` execution or verification failure, `2` invalid argu
 
 ## Updates and versions
 
-The current release is 0.4.0. Check CLI and skill versions and update manually:
+The current release is 0.5.0. Check CLI and skill versions and update manually:
 
 ```bash
 axure-forge update check
@@ -317,7 +323,7 @@ axure-forge update all --yes
 axure-forge config set sources.cli.repo qizhi2design/axureforge-cli
 ```
 
-Offline use remains available. Automatic checks fail silently; manual updates leave the current installation intact when the release source is unreachable. See the [update notes](docs/updates.md) for mirrors, rollback and platform behaviour. Users on 0.3.0 must download the complete 0.4.0 directory package once to obtain the new commands.
+Offline use remains available. Automatic checks fail silently; manual updates leave the current installation intact when the release source is unreachable. See the [update notes](docs/updates.md) for mirrors, rollback and platform behaviour. Users on 0.3.0 must download the complete 0.5.0 directory package once to obtain the new commands.
 
 ## License and compliance
 

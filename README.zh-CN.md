@@ -44,7 +44,7 @@
 ## 能做什么
 
 - 🆕 从零新建 RP9 或 RP11 原型，直接开始画。
-- 🧩 30 个命令组、155 条命令，覆盖页面与页面树、元件、动态面板、中继器、表格、树、菜单、母版与母版树、自适应视图、连接线、交互与交互样式、表达式、元件库、分组、框架、文件夹、检索、格式与批量。
+- 🧩 36 个顶层入口、170 条叶子命令，覆盖页面与页面树、元件、动态面板、中继器、表格、树、菜单、母版与母版树、自适应视图、连接线、交互与交互样式、表达式、元件库、分组、框架、文件夹、检索、格式与批量。
 - 🌐 把现成网页一次性导入，自动完成布局，生成可编辑的页面。
 - 🔍 `dump` 生成索引，之后在本地查页面和元件，不用反复打开原型。
 - ⚡ 批量修改一次提交，要么全部成功，要么全部不生效。
@@ -61,12 +61,12 @@ AxureForge 以目录包分发，下载解压就能用。**必须保留整个目�
 2. 把两个文件放在同一个文件夹，先校验，再解压。
 3. 进入解压后的目录，运行 `--version` 确认可用。
 
-下面以 Apple 芯片 Mac 的 0.4.0 为例；Linux 和 Windows 换成对应平台的压缩包，步骤相同。
+下面以 Apple 芯片 Mac 的 0.5.0 为例；Linux 和 Windows 换成对应平台的压缩包，步骤相同。
 
 ```bash
 shasum -a 256 -c SHA256SUMS
-tar -xzf axure-forge-0.4.0-macos-arm64.tar.gz
-cd axure-forge-0.4.0-macos-arm64
+tar -xzf axure-forge-0.5.0-macos-arm64.tar.gz
+cd axure-forge-0.5.0-macos-arm64
 ./axure-forge --version
 ./axure-forge --help
 ```
@@ -78,6 +78,12 @@ cd axure-forge-0.4.0-macos-arm64
 - 第 5 行：列出程序支持的所有命令。
 
 可以把整个目录移动到固定位置，再为里面的可执行文件创建命令入口；macOS 也可以使用 skill 的安装脚本自动完成校验和部署。
+
+## CLI 0.5.0 命令规范
+
+直接运行 `axure-forge` 查看安装版本与分组帮助。帮助和 CLI 提示统一为英文；错误在 stdout 保留协议 v3 JSON，在 stderr 提供简短说明，添加 `--debug` 可查看堆栈。
+
+**破坏性变更：**分组改用 `adaptive-view`、`adaptive-view-set`、`interaction-style`、`master-folder`、`master-instance`、`master-tree`、`page-tree`。旧下划线拼写和长参数缩写不再接受；batch 的 `master_instance.create` 等内部操作名不变。见[完整帮助文案](docs/cli-help.md)和[发布说明](docs/RELEASE-0.5.md)。
 
 ## 三分钟上手
 
@@ -243,7 +249,7 @@ RP9 和 RP11 都支持读取、编辑和写入，两个版本之间可以互转�
 <details>
 <summary><b>启动失败，提示临时目录不可用？</b></summary>
 
-0.4.0 使用目录包。请确认整个目录和 `_internal` 都在，程序文件有执行权限。
+0.5.0 使用目录包。请确认整个目录和 `_internal` 都在，程序文件有执行权限。
 
 </details>
 
@@ -308,7 +314,7 @@ RP9 和 RP11 都支持读取、编辑和写入，两个版本之间可以互转�
 
 ## 更新与版本
 
-当前发布版本为 0.4.0，可检查 CLI 和 skill 版本并手动更新：
+当前发布版本为 0.5.0，可检查 CLI 和 skill 版本并手动更新：
 
 ```bash
 axure-forge update check
@@ -317,7 +323,7 @@ axure-forge update all --yes
 axure-forge config set sources.cli.repo qizhi2design/axureforge-cli
 ```
 
-断网不影响日常使用；自动检查失败静默跳过，手动更新遇到发布源不可达时正常结束并保留当前安装。镜像、回滚与平台行为见[更新说明](docs/updates.md)。0.3.0 用户需要先完整下载一次 0.4.0 目录包，才能使用新增更新命令。
+断网不影响日常使用；自动检查失败静默跳过，手动更新遇到发布源不可达时正常结束并保留当前安装。镜像、回滚与平台行为见[更新说明](docs/updates.md)。0.3.0 用户需要先完整下载一次 0.5.0 目录包，才能使用新增更新命令。
 
 ## 许可与合规
 
