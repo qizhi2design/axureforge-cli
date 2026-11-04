@@ -131,7 +131,7 @@ cd axure-forge-0.5.0-macos-arm64
 
 ```bash
 ./axure-forge node create --project demo.rp --scope-id YOUR_SCOPE_ID \
-  --spec '{"kind":"text","text":"Hello Axure"}' --output edited.rp
+  --spec '{"kind":"text","text":"你好 Axure"}' --output edited.rp
 ```
 
 这条命令往该页面加一段文字，结果另存为 `edited.rp`。
@@ -140,7 +140,7 @@ cd axure-forge-0.5.0-macos-arm64
 
 ```bash
 ./axure-forge html import --project demo.rp \
-  --html '<h1>Hello Axure</h1><p>可编辑原型</p>' \
+  --html '<h1>你好 Axure</h1><p>可编辑原型</p>' \
   --page-name HTML --page-size 1440x900 --output imported.rp
 ```
 

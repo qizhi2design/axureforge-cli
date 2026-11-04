@@ -118,11 +118,11 @@ None of these three commands modifies `demo.rp`.
 **Look up templates and formats:**
 
 ```bash
-./axure-forge search explore --query 输入框 --category template
+./axure-forge search explore --query input --category template
 ./axure-forge format list
 ```
 
-- Line 1: search built-in templates for "输入框" (input field) to see what you can reuse.
+- Line 1: search built-in templates for "input" to see what you can reuse.
 - Line 2: list the formats and widget types the tool knows about.
 
 **Add a widget:**
@@ -140,7 +140,7 @@ This adds a text block to that page and saves the result as `edited.rp`.
 
 ```bash
 ./axure-forge html import --project demo.rp \
-  --html '<h1>Hello Axure</h1><p>可编辑原型</p>' \
+  --html '<h1>Hello Axure</h1><p>Editable prototype</p>' \
   --page-name HTML --page-size 1440x900 --output imported.rp
 ```
 
