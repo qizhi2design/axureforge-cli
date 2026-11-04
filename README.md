@@ -24,9 +24,9 @@
 
 <p align="center">
   <img alt="Axure RP9 / RP11" src="https://img.shields.io/badge/RP9%20%2F%20RP11-22D3EE?style=flat-square">
-  <img alt="HTML import" src="https://img.shields.io/badge/HTML%E5%AF%BC%E5%85%A5-22D3EE?style=flat-square">
-  <img alt="Batch edits" src="https://img.shields.io/badge/%E6%89%B9%E9%87%8F%E4%BF%AE%E6%94%B9-22D3EE?style=flat-square">
-  <img alt="Strict conversion" src="https://img.shields.io/badge/%E4%B8%A5%E6%A0%BC%E8%BD%AC%E6%8D%A2-22D3EE?style=flat-square">
+  <img alt="HTML import" src="https://img.shields.io/badge/HTML%20import-22D3EE?style=flat-square">
+  <img alt="Batch edits" src="https://img.shields.io/badge/Batch%20edits-22D3EE?style=flat-square">
+  <img alt="Strict conversion" src="https://img.shields.io/badge/Strict%20conversion-22D3EE?style=flat-square">
 </p>
 
 <p align="center">

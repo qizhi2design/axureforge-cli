@@ -15,11 +15,11 @@
 </p>
 
 <p align="center">
-  <img alt="支持 Apple 芯片 Mac" src="https://img.shields.io/badge/macOS-Apple%20Silicon-000000?logo=apple&logoColor=white">
+  <img alt="支持 Apple 芯片 Mac" src="https://img.shields.io/badge/macOS-Apple%20%E8%8A%AF%E7%89%87-000000?logo=apple&logoColor=white">
   <img alt="支持 Linux 64 位" src="https://img.shields.io/badge/Linux-x64-FCC624?logo=linux&logoColor=black">
   <img alt="支持 Windows 64 位" src="https://img.shields.io/badge/Windows-x64-0078D4?logo=windows&logoColor=white">
-  <img alt="当前版本" src="https://img.shields.io/github/v/release/qizhi2design/axureforge-cli?color=0A7AFF">
-  <img alt="许可证 MIT" src="https://img.shields.io/badge/license-MIT-22C55E">
+  <img alt="当前版本" src="https://img.shields.io/github/v/release/qizhi2design/axureforge-cli?color=0A7AFF&label=%E7%89%88%E6%9C%AC">
+  <img alt="许可证 MIT" src="https://img.shields.io/badge/%E8%AE%B8%E5%8F%AF%E8%AF%81-MIT-22C55E">
 </p>
 
 <p align="center">
